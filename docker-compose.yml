@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    volumes:
+      - type: bind
+        source: ./data/
+        target: /data/
+    ports:
+      - "8080:80"
+    environment:
+      CONFIG_PATH: /data/config.json
+    init: true
