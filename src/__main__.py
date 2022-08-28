@@ -25,9 +25,9 @@ async def favorite(tweet_id: str):
     print("Add favorite to tweet:", tweet_id)
     try:
         api.create_favorite(tweet_id)
+        return {"status": True}
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
-
 
 
 def check_direct_message():
