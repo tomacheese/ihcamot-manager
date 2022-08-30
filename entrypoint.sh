@@ -2,7 +2,7 @@
 
 while :
 do
-  python -m src
+  python -m src || true
 
   echo "Restarting..."
 done
