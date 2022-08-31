@@ -51,9 +51,11 @@ def check_direct_message():
                 tweet_id = re.search(regex, text).group(1)
                 tweet = api.get_status(tweet_id)
                 if tweet.favorited:
-                    print("Already favorited: ", tweet_id)
+                    print("Already favorite: ", tweet_id)
+                    api.mark_direct_message_read(obj.id)
                     continue
                 api.create_favorite(tweet.id)
+                api.mark_direct_message_read(obj.id)
 
                 print("Add favorite to tweet:", tweet_id)
             print("End")
