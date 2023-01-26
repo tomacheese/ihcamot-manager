@@ -8,6 +8,7 @@ RUN apt-get update && \
 WORKDIR /app
 
 COPY requirements.txt .
+# hadolint ignore=DL3013
 RUN pip install --no-cache-dir --upgrade pip && \
   pip install --no-cache-dir --upgrade setuptools && \
   pip install --no-cache-dir --requirement requirements.txt
